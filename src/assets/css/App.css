@@ -1,0 +1,72 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #2f3544;
+}
+
+.App {
+  text-align: center;
+}
+
+.input-group {
+  width: 80%;
+}
+
+.card {
+  max-width: 95%;
+}
+@media (min-width: 768px) {
+  .card {
+    max-width: 80%;
+  }
+}
+.card-title {
+  position: absolute;
+  padding: 20px;
+}
+
+.card-date {
+  position: absolute;
+  padding-left: 20px;
+  margin-top: 60px;
+}
+
+@media (min-width: 768px) {
+  .card-date {
+    position: absolute;
+    padding-left: 20px;
+    margin-top: 60px;
+  }
+}
+
+.card-temp {
+  position: absolute;
+  padding-left: 20px;
+  margin-top: 200px;
+  font-size: 50px;
+}
+@media (min-width: 768px) {
+  .card-temp {
+    position: absolute;
+    padding-left: 20px;
+    margin-top: 260px;
+    font-size: 50px;
+  }
+}
+
+.card-desc {
+  position: absolute;
+  padding-left: 7px;
+  margin-top: 260px;
+}
+@media (min-width: 768px) {
+  .card-desc {
+    margin-top: 330px;
+  }
+}
