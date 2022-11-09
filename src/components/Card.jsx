@@ -55,18 +55,18 @@ const Card = ({loadingData, showData, weather, forecast}) => {
                     <h5 className="card-text">Velocidad del viento: {weather.wind.speed}m/s</h5>
                   </div>
                   <hr />
-                  <div className="row mt-4 w-100 mx-auto">
-                    <div className="col-12 col-md-4 bg-secondary py-2">
+                  <div className="row mt-4 w-100 mx-auto px-3">
+                    <div className="col-12 col-md-4 bg-secondary py-2 rounded">
                       <p className="">{forecastDate3}h</p>
                       <p className="description "><img src={iconUrl3hrs} alt="icon"/>{forecast.list[1].weather[0].description}</p>
                       <p>{forecast.list[1].main.temp}°C</p>
                     </div>
-                    <div className="col-12 col-md-4 py-2">
+                    <div className="col-12 col-md-4 py-2 rounded">
                       <p>{forecastDate6}h</p>
                       <p className="description"><img src={iconUrl6hrs} alt="icon"/>{forecast.list[2].weather[0].description}</p>
                       <p>{forecast.list[2].main.temp}°C</p>
                     </div>
-                    <div className="col-12 col-md-4 bg-secondary py-2">
+                    <div className="col-12 col-md-4 bg-secondary py-2 rounded">
                       <p>{forecastDate9}h</p>
                       <p className="description"><img src={iconUrl9hrs} alt="icon"/>{forecast.list[3].weather[0].description}</p>
                       <p>{forecast.list[3].main.temp}°C</p>
@@ -79,7 +79,7 @@ const Card = ({loadingData, showData, weather, forecast}) => {
 
           </div>
         ): (
-          <h2 className="text-light">Sin datos</h2>
+          <h2 className="text-light">Sin datos :(</h2>
         )
       }
     </div>

@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
+import withReactContent from 'sweetalert2-react-content'
+import Swal from 'sweetalert2'
+import axios from "axios";
 import Card from "./Card";
 import Form from "./Form";
-import axios from "axios";
+
+const MySwal = withReactContent(Swal)
+
 
 const WeatherPanel = () => {
   let urlWeather =
@@ -29,11 +34,9 @@ const WeatherPanel = () => {
         return response.json();
       })
       .then((weatherData) => {
-        console.log(weatherData);
         setWeather(weatherData);
       })
       .catch((error) => {
-        console.log(error);
         setLoading(false);
         setShow(false);
       });
@@ -54,7 +57,11 @@ const WeatherPanel = () => {
         setShow(true);
       })
       .catch((error) => {
-        console.log(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: error.response.status === 404 ? 'No fue posible encontrar esta ciudad' : error.response.statusText,
+        })
         setLoading(false);
         setShow(false);
       });
